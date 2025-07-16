@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Hello World</h1>
+    <h2 class="text">This is heading 2</h2>
+    <p class="text">This is a paragraph</p>
+    <p class="text">This is another paragaraphh</p>
+
+    <script>
+      //difference between querySelector and getElementById
+
+      // let h1 = document.getElementById('title');
+      // console.log('getElementById',h1.innerText);
+
+      // let p = document.querySelector('.text');
+      // console.log('querySelector:',p.innerText);
+
+      // let new_p = document.createElement('p');
+      // new_p.innerText = "This is newly created paragraph.";
+      // document.body.appendChild(new_p);
+
+      //-----------------------2-------------------------------
+
+      //   let runAgain = true;
+
+      //   const canDrive = (age) => {
+      //     return age >= 18 ? true : false;
+      //   };
+
+      //   while (runAgain) {
+      //     let age = prompt("Enter your age: ");
+      //     age = Number.parseInt(age);
+
+      //     if (canDrive(age)) {
+      //       alert("Yes you can drive");
+      //     } else {
+      //       alert("You can't drive a car");
+      //     }
+      //     runAgain = confirm("Do you want to run again?");
+      //   }
+
+      //---------------------------3-------------------------------
+      // let number = prompt("Enter a number: ");
+      // number = Number.parseInt(number);
+
+      // if(number >= 4){
+      //     location.href = 'https://www.google.com';
+      // }
+
+      //---------------------------4--------------------------------
+
+      // let color = prompt("Enter the body background color:");
+      // document.body.style.backgroundColor = color;
+
+      //---------------------------Snake,Water and Gun ----------------------------
+
+      let choices = ["G", "W", "S"];
+      let runAgain = true;
+
+
+      while (runAgain) {
+
+        const yourChoice = prompt("Enter 'S' for Snake,'W' for Water and 'G' for Gun: ");
+
+        //generate random index 0-2
+        const randomIndex = Math.floor(Math.random() * choices.length);
+
+        //get the random number
+        const randomChoice = choices[randomIndex];
+
+        console.log(randomChoice);
+
+        if (yourChoice === randomChoice) {
+          alert("Match Tie!!");
+        } else if (yourChoice === "G" && randomChoice === "S") {
+          alert('You win: "G > S"');
+        } else if (yourChoice === "S" && randomChoice === "G") {
+          alert('You Lose: "S < G"');
+        } else if (yourChoice === "W" && randomChoice === "S") {
+          alert('You Lose: "W < S"');
+        } else if (yourChoice === "S" && randomChoice === "W") {
+          alert('You win: "S > W" ');
+        } else if (yourChoice === "G" && randomChoice === "W") {
+          alert('You Lose: "G < W"');
+        } else if (yourChoice === "W" && randomChoice === "G") {
+          alert('You Win: "W > G"');
+        } else {
+          alert("Invalid Input : Input should exist in [G, S, W]");
+        }
+
+        runAgain = confirm('Do you want to play Again?');
+      }
+    </script>
+  </body>
+</html>
