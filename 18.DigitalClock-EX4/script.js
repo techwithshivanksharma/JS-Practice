@@ -48,8 +48,8 @@ let timerID = setInterval(() => {
   } , ${date.getFullYear()}`;
 }, 1000);
 
-function pad(num) {
-  return num.toString().padStart(2, "0");
-}
+// function pad(num) {
+//   return num.toString().padStart(2, "0");
+// }
 
 //clearInterval(timerID);
