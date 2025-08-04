@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Apply a background color to the page */
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Style the form container */
+      form#loginForm {
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Input styles */
+      form#loginForm input[type="text"],
+      form#loginForm input[type="password"] {
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      form#loginForm input:focus {
+        border-color: #6366f1;
+      }
+
+      /* Button styles */
+      form#loginForm button {
+        background: #6366f1;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      form#loginForm button:hover {
+        background: #4f46e5;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="loginForm">
+      <input
+        type="text"
+        name="name"
+        placeholder="Email"
+        id="userEmail"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        id="userPassword"
+        required
+      />
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>

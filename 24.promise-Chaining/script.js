@@ -33,7 +33,6 @@ const loadScript = (url) => {
   return new Promise((resolve, reject) => {
     let script = document.createElement("script");
     script.src = url;
-    document.body.appendChild(script);
 
     script.onload = () => {
       resolve("Script Loaded Successfully");
@@ -42,6 +41,8 @@ const loadScript = (url) => {
     script.onerror = () => {
       reject("Script Loading Failed");
     };
+
+    document.body.appendChild(script);
   });
 };
 
@@ -50,8 +51,8 @@ let p1 = loadScript(
 );
 
 p1.then((value) => {
-  // if some error here ontrol will directly jump to catch block skiping the next then  
-  console.log(value);    
+  // if some error here control will directly jump to catch block skiping the next then
+  console.log(value);
   return loadScript(
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
   );
