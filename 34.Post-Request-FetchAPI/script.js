@@ -10,10 +10,10 @@ form.addEventListener('submit',(e)=>{
     }
     
     
-    fetch('https://reqres.in/api/login',{
+    fetch('https://reqres.in/api/register',{
         method: 'POST',
         headers : {
-            'content-type' : 'application/json'
+            'Content-type' : 'application/json'
         },
         body: JSON.stringify(userData)
     })

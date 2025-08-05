@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 40px;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      body.light {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      body.dark{
+        background-color: #333333;
+        color: #ffffff;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      } 
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Local Storage Exercise</h1>
+      <button id="toggleTheme">Toggle Theme</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
