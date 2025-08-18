@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+        font-family: monospace;
+        color: #00ff00;
+        padding: 20px;
+        text-align: center;
+        font-size: 15px;
+      }
+      input,
+      button {
+        background: black;
+        border: white 1px solid;
+        color: #00ff00;
+        padding: 5px 10px;
+        font-family: monospace;
+        font-size: 15px;
+      }
+      #container {
+        margin-bottom: 20px;
+      }
+      #terminal-screen {
+        margin-top: 100px;
+        white-space: pre-wrap;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input
+        type="text"
+        name="username"
+        placeholder="Target username"
+        id="username"
+      />
+      <button id="hackBtn">Hack!</button>
+    </div>
+
+    <div id="terminal-screen"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
