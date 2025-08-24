@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Prototypes in JavaScript
+
+      // Every object in JavaScript has a prototype.
+      // A prototype is also an object.
+
+      // All JavaScript objects inherit their properties and methods from their prototype.
+
+      // The Object.prototype is on the top of the prototype chain.
+
+      //Example1
+
+    //   const obj1 = {
+    //     name: "Shivank Sharma",
+    //   };
+
+    //   const obj2 = {
+    //     welcome() {
+    //       alert(`Hello Welcome ${this.name}.`);
+    //     },
+    //     bye() {
+    //       alert(`Bye`);
+    //     },
+    //   };
+
+    //   obj1.__proto__ = obj2;
+    //   obj1.welcome();
+    //   obj1.bye();
+
+      //Jab obj1.welcome() call hota hai:
+      // JS pehle dekhta hai kya welcome obj1 mein hai → nahi.
+      // To obj1.__proto__ (i.e., obj2) me dhoondhta hai → wahan milta hai.
+      // Function call ke waqt, this = caller object (obj1).
+      // Isliye this.name → "Shivank Sharma" mil jata hai.
+
+
+
+      //---------- Example 2: Using Object.create to create an object with a specific prototype----------
+      const animal = {
+          eats: true,
+          walk() {
+              console.log("Animal walks");
+          }
+      };
+
+      const rabbit = Object.create(animal);
+      rabbit.jumps = true;
+      rabbit.sleep = function() {
+          console.log("Rabbit sleeps");
+      };
+
+      console.log(rabbit.eats); // true
+      console.log(rabbit.jumps); // true
+      rabbit.walk(); // Animal walks
+      rabbit.sleep(); // Rabbit sleeps
+
+      // Example 3: Using constructor functions and prototypes
+      // function Person(name) {
+      //     this.name = name;
+      // }
+
+      // Person.prototype.greet = function() {
+      //     console.log(`Hello, my name is ${this.name}`);
+      // };
+
+      // const john = new Person("John");
+      // john.greet(); // Hello, my name is John
+
+      // Example 4: Checking prototype chain
+      // console.log(john.__proto__ === Person.prototype); // true
+      // console.log(Person.prototype.__proto__ === Object.prototype); // true
+    </script>
+  </body>
+</html>
