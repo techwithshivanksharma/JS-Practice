@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      //Class and Object without constructor
+        
+      class TicketBooking {
+        takeInfo(name, source, destination) {
+          this.name = name;
+          this.source = source;
+          this.destination = destination;
+        }
+
+        submit() {
+          alert(
+            `Congrats ${this.name} , Your ticket from ${this.source} to ${this.destination} has successfully booked.`
+          );
+        }
+
+        cancel(){
+            alert(
+                `${this.name}, Your ticket from ${this.source} to ${this.destination} has been cancelled successfully.`
+            )
+        }
+      }
+
+      let Varun = new TicketBooking();
+      Varun.takeInfo('Varun Singh','Delhi','Banglore');
+      Varun.submit();
+      //Varun.cancel();
+
+      let Rajat = new TicketBooking();
+      Rajat.takeInfo('Rajat Sharma','Delhi','Punjab');
+      Rajat.submit();
+      //Rajat.cancel();
+
+
+
+      //Checking prototype chain
+      console.log(Varun.__proto__ === TicketBooking.prototype); // true
+      console.log(TicketBooking.prototype.__proto__ === Object.prototype); // true
+    </script>
+  </body>
+</html>

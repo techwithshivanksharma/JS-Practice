@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class TicketBooking{
+
+            constructor(name,source,destination,train_no,address){
+
+                console.log('Constructor called...');
+
+                this.name = name;
+                this.source = source;
+                this.destination = destination;
+                this.train_no = train_no;
+                this.address = address;
+            }
+
+            preview(){
+                alert(`${this.name} ,Your ticket from ${this.source} to ${this.destination} for Train no. ${this.train_no} and your address is ${this.address}`);
+            }
+
+            submit(){
+                alert(`${this.name} ,Your ticket from ${this.source} to ${this.destination} for Train no. ${this.train_no} has successfully booked.`);
+            }
+
+            cancel(){
+                alert(`${this.name} ,Your ticket from ${this.source} to ${this.destination} for Train no. ${this.train_no} has successfully canceled.`);
+                this.train_no = 0;
+                this.source = "______";
+                this.destination = "______";
+            }
+        }
+
+        let john = new TicketBooking('John Cena','Delhi','Bihar',102343,'Patna,Bihar-201210');
+        john.preview();
+        john.submit();
+        john.cancel();
+        john.preview();
+
+         let joseph = new TicketBooking('Joseph','Delhi','Haridwar',123510,'Shastri Nagar,Delhi-211410');
+        joseph.preview();
+        joseph.submit();
+        joseph.cancel();
+        joseph.preview();
+    </script>
+</body>
+</html>
