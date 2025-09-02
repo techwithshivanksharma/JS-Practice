@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in JS</title>
+</head>
+<body>
+    
+    <script>
+        class Employee{
+            constructor(name,salary,age){
+                this.name = name;
+                this.salary = salary;
+                this.age = age;
+            }
+
+            work(){
+                console.log(`${this.name} is currently working...`)
+            }
+                    
+            showInfo(){
+                console.log(`The name of Employee is ${this.name} and he ears ${this.salary} INR.`)
+            }
+        }
+
+        class Manager extends Employee{
+            constructor(name,salary,age,department){
+                super(name,salary,age);
+                this.department = department;
+            }
+
+            manageTeam(){
+                console.log(`${this.name} is managing a team of Finance Department.`)
+            }
+        }   
+
+        class Developer extends Employee{
+            constructor(name,salary,age,language){
+                super(name,salary,age);
+                this.language = language;
+            }
+
+            programming(){
+                console.log(`${this.name} is prgamming in ${this.language}`);
+            }
+        }
+
+        let emp1 = new Employee('Shivank',30000,24);
+        emp1.work();
+        emp1.showInfo();
+        console.log('---------------------');
+        let emp2 = new Manager('Rajat',60000,32,'Finance');
+        emp2.work();
+        emp2.showInfo();
+        emp2.manageTeam();
+        console.log('---------------------');
+        let emp3 = new Developer('Aman',45000,26,'JavaScript');
+        emp3.work();
+        emp3.showInfo();
+        emp3.programming();
+    </script>
+</body>
+</html>

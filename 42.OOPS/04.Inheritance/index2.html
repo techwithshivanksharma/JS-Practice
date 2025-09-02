@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            eat(){
+                console.log(`${this.name} is eating...`);
+            }
+
+            sleep(){
+                console.log(`${this.name} is sleeping...`);
+            }
+        }
+
+        class Monkey extends Animal{
+            constructor(name,age,color){
+                super(name,age);
+                this.color = color;
+            }
+            climb(){
+                console.log(`${this.name} of color ${this.color} is climbing...`);
+            }
+        }
+
+        let m1 = new Monkey('Chimpuk',5,'Light Green');
+        m1.eat();
+        m1.sleep();
+        m1.climb();
+    </script>
+</body>
+</html>
