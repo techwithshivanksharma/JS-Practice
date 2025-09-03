@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS doesn't support overloading we can only code overloading like behavour using variable arguments (...args) and if/else.
+
+        class Messenger{
+            send(...args){
+                
+                let recipitent,msg,urgent = false;
+
+                if(args.length === 1 && typeof args[0] === 'string'){
+                    recipitent = args[0];
+                    msg = 'Hello this is a default message.';
+                }
+                else if(args.length === 2 && typeof args[0] === 'string' && typeof args[1] === 'string'){
+                    recipitent = args[0];
+                    msg = args[1];
+                }
+                else if(args.length === 1 && typeof args[0] === 'object' && args[0] !== null){
+                    const opts = args[0];
+                    recipitent = opts.recipitent;
+                    msg = opts.msg ?? 'Hello this is a default message...'; //nullshish coalescing operator
+                    urgent = !!opts.urgent;
+                }else{
+                    throw new Error('Invalid arguments');
+                    return;
+                }
+
+
+                if(urgent){
+                    console.log(`Sending Urgent message "${msg}" to:  ${recipitent}`);
+                }else{
+                    console.log(`Sending message "${msg}" to:  ${recipitent}`);   
+                }
+            }
+        }   
+
+
+        const messenger = new Messenger();
+        messenger.send('John'); // Sending message Hello this is a default message... to:  John
+        messenger.send('Jane', 'Hi Jane! I am Shivank.'); // Sending message "Hi Jane!" to:  Jane
+        messenger.send({recipitent: 'Doe', msg: 'Hello Doe! This is a custom message.', urgent: true}); // Sending Urgent message Hello Doe! This is a custom message. to:  Doe
+        messenger.send({recipitent: 'Alice'}); // Sending message Hello this is a default message... to:  Alice
+    </script>
+</body>
+</html>

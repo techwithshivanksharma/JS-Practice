@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car{
+            start(){
+                console.log("Car is starting...");
+            }
+            stop(){
+                console.log("Car is stopping...");
+            }
+            mileage(km){
+                console.log(`Car can run ${km} km on full tank`);
+            }
+            topSpeed(speed){
+                console.log(`The average top speed of Indian Suv's is ${speed} km/hr`);
+            }
+        }
+
+        class Safari extends Car{
+            mileage(km){
+                console.log(`Safari can run ${km} km on full tank with AC on`);
+            }
+            topSpeed(speed){
+                
+                //super.topSpeed(speed);  // calling parent class method
+
+                console.log(`Safari can run at the top speed of ${speed} km/hr with AC on`);
+            }
+        }
+
+        class Thar extends Car{
+            mileage(km){
+                console.log(`Thar can run ${km} km on full tank with AC on`);
+            }
+            topSpeed(speed){
+
+                console.log(`Thar can run at the top speed of ${speed} km/hr with AC on`);
+            }
+        }
+
+        class Innova extends Car{
+            mileage(km){
+                console.log(`Innova can run ${km} km on full tank with AC on`);
+            }
+            topSpeed(speed){
+                console.log(`Innova can run at the top speed of ${speed} km/hr with AC on`);
+            }
+        }
+
+        let s1 = new Safari();
+        s1.start();
+        s1.mileage(15);
+        s1.topSpeed(180);
+        s1.stop();
+
+        let t1 = new Thar();
+        t1.start();
+        t1.mileage(13);
+        t1.topSpeed(160);
+        t1.stop();
+
+        let i1 = new Innova();
+        i1.start();
+        i1.mileage(12);
+        i1.topSpeed(150);
+        i1.stop();
+
+    </script>
+</body>
+</html>
